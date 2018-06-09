@@ -1,0 +1,167 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $primary
+	color: #fff
+
+html
+  font-size: 16px
+
+body
+	font-size: 1rem
+	min-width: 320px
+	position: relative
+	// line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+
+.container
+  &.is-full-hd
+    max-width: 1920px
+    padding-left: 0.625rem
+    padding-right: 0.625rem
+
+.button
+    font-size: 1.125rem
+    color: $secondary
+    font-weight: 800
+    text-transform: uppercase
+    border: 1px solid $primary;
+    background-color: white
+    border-radius: 2.1875rem
+    line-height: 1
+    // padding: 2.125rem
+    // padding-top: 1.8125rem
+    // padding-bottom: 1.875rem
+    display: inline-flex
+    justify-content: center;
+    align-items: center
+    width: 15.375rem
+    height: 3.125rem
+
+    cursor: pointer
+
+    text-decoration: none !important
+
+    transition: all 0.3s ease
+
+    &:hover,
+    &:focus
+      color: white
+      background: $secondary
+      border-color: $secondary
+      
+
+    &.is-primary  
+      background: $primary
+      color: white
+      &:hover,
+      &:focus
+        color: $primary
+        background: white
+        border-color: $primary
+
+
+  
+
+.navbar
+  display: flex
+  justify-content: space-between
+  padding-top: 0.625rem
+  .navbar-logo
+    width: 14.875rem
+    height: 3.75rem
+    img
+      width: 100%
+  .navbar-menu
+    .navbar-item
+      transition: all 0.3s ease
+      font-size: 1.125rem
+      color: $secondary
+      font-weight: 800
+      text-transform: uppercase
+      text-decoration: none
+      &:not(:last-child)
+        margin-right: 4.375rem
+
+      &:not(.button)
+        &:hover,
+        &:focus
+          color: $primary
+
+.call-to-action
+  .button
+    &:not(:last-of-type)
+      margin-right: 1.875rem
+
+#block-hello
+  .title
+    margin-top: 5.0rem
+    font-family: "HelloStockholm-Alt"
+    color: $primary
+    font-size: 18.0rem
+    margin-bottom: 0
+    font-weight: normal
+    line-height: 1
+    z-index: 4
+    margin-bottom: -5rem
+    margin-left: -2.4rem
+    
+  .subtitle
+    font-size: 3.0rem
+    margin-top: 0
+    font-family: "DrukWideCyTT-Super"
+    z-index: 5;
+    text-transform: uppercase
+    color: white
+
+  .caption 
+    margin-top: 4.1875rem
+    color: white
+    font-family: $default-font
+    font-weight: 900
+    font-size: 1.5rem
+    max-width: 30rem
+
+  .call-to-action
+    margin-top: 10.25rem
+    margin-bottom: 8.4375rem
+
+  .screen-left
+    background: url(../img/header-left-pc.png);
+    background-size: cover
+    background-position: left
+  .screen-right
+    background: url(../img/header-right-pc.png);
+    background-size: cover
+    background-position: right
+
+
+@import "media" // Always at the end
