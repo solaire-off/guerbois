@@ -28,6 +28,121 @@ body
 		&:required:valid
 			border-color: green
 
+
+.section
+  margin-top: 9.375rem
+
+  &.has-padding 
+    padding: 9.375rem 0
+
+  &.is-gray
+    background: $gray3
+  .section-title
+    font-family: "DrukWideCyTT-Super"
+    font-size: 3.0rem
+    line-height: 1
+    text-transform: uppercase
+    margin-bottom: 3.125rem
+    color: $secondary
+  .section-image
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+    
+.tabs
+  width: 100%
+  list-style-type: none 
+  display: flex
+  justify-content: flex-start
+  border-bottom: 1px solid $gray3
+  padding: 0
+  .tab
+    font-family: $default-font
+    text-transform: uppercase
+    padding: 1.5625rem 2.1875rem 1.4375rem
+    color: $secondary
+    font-size: 1.125rem
+    font-weight: 800
+    &.active
+      border-bottom: 5px solid $primary
+      padding-bottom: calc(2.1875rem - 10px)
+    &:hover
+      &:not(.no-hover)
+      color: rgba(16, 66, 106, 0.8);
+      cursor: pointer
+
+.box
+  box-shadow: 0 8px 10px -5px rgba(255, 90, 97, 0.2), 0 6px 30px 5px rgba(255, 90, 97, 0.12), 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+  border-radius: 1.875rem
+  background: white
+  .box-innear
+    font-size: 1.25rem
+    padding: 6.0625rem
+    font-weight: 500
+    .caption
+      text-align: left
+      margin-top: 1rem
+      margin-bottom: 0
+      color: $gray1
+      font-size: 1rem
+      font-weight: 500
+  .box-title
+    text-align: center
+    margin-bottom: 2.9375rem
+    padding-top: 3.3125rem
+
+
+.blockquote
+  display: flex
+  justify-content: space-between
+  align-items: center
+  border-radius: 5.0rem
+  background: $gray3
+  padding: 1.875rem
+  .author-image,
+  .icon
+    width: 6.25rem
+    height: 6.25rem
+    object-fit: contain
+  .author-image
+    border-radius: 50%
+  .content
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    max-width: 37.375rem
+    .text
+    .author
+      font-family: 1.125rem
+      font-weight: bold
+      margin-bottom: 0
+
+.list
+  font-size: 1.25rem
+  color: $gray1
+  padding-left: 1.8rem
+  &.is-red
+    list-style-type: none
+    .list-item
+      &::before
+        content: " "
+        display: inline-block;
+        position: absolute;
+        left: 1.0rem;
+        margin-top: 0.5rem;
+
+        width: 0.875rem
+        height: 0.875rem
+        border-radius: 50%
+        background-image: radial-gradient(circle at 37% 38%, $primary, $burgundy);
+        box-shadow: 0 10px 10px 0 rgba(255, 90, 97, 0.7), -1px 2px 5px 0 $secondary;
+
+  .list-item
+    &:not(:last-child)
+      margin-bottom: 2.0rem
+
+    
 .img-responsive
 	display: block
 	max-width: 100%
@@ -75,8 +190,7 @@ b, strong
     &:hover,
     &:focus
       color: white
-      background: $secondary
-      border-color: $secondary
+      background: $primary
       
 
     &.is-primary  
@@ -84,9 +198,10 @@ b, strong
       color: white
       &:hover,
       &:focus
-        color: $primary
-        background: white
-        border-color: $primary
+        background: lighten($primary, 2)
+
+
+
 
 
   
@@ -101,7 +216,9 @@ b, strong
     img
       width: 100%
   .navbar-menu
+    z-index: 100
     .navbar-item
+      display: inline-block
       transition: all 0.3s ease
       font-size: 1.125rem
       color: $secondary
@@ -112,16 +229,153 @@ b, strong
         margin-right: 4.375rem
 
       &:not(.button)
-        &:hover,
-        &:focus
-          color: $primary
+        &:not(.social)
+          &:not(.has-dropdown)
+            &:hover,
+            &:focus
+              opacity: 0.7
+
+      &.has-dropdown
+        position: relative
+        &::after
+          content: " ";
+          background: url(../img/arrow-down.png);
+          width: 0.9rem;
+          height: 1em;
+          position: relative
+          top: 0.1rem
+
+          display: inline-block;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+        &.is-active
+          &::after
+            background: url(../img/arrow-up.png);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        &:hover
+          cursor: pointer
+        .dropdown
+          display: none
+          position: absolute
+          z-index: -1
+          background: #FFF
+          top: 2rem
+          opacity: 1
+          padding-left: 0
+          list-style-type: none
+          width: 150%
+          margin-left: -25%
+          box-shadow: 0 2px 4px -1px rgba(255, 90, 97, 0.2), 0 1px 10px 0 rgba(255, 90, 97, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+          margin-top: -2.5rem
+          padding-top: 2.7rem
+          border-radius: 0.525rem
+          li
+            padding-left: 20%
+            padding-top: 0.4rem
+            padding-bottom: 0.4rem
+            transition: background 0.3s ease
+            a
+              display: block
+            &:hover
+              opacity: 1
+              background: $gray3
+            &:last-of-type
+              border-bottom-left-radius: 0.525rem
+              border-bottom-right-radius: 0.525rem
+        &.is-active
+          position: relative
+          .dropdown
+            display: block
+
+
+
+      &.social
+        display: inline-flex
+        opacity: 1
+        .social-item
+          transition: opacity 0.3s ease
+          &:hover,
+          &:focus
+            opacity: 0.7
+          img
+            height: 1.8rem
+            width: auto
+          &:not(:last-of-type)
+            margin-right: 1.8rem
+
+.footer
+  padding-top: 3.125rem
+  padding-bottom: 3.125rem
+  background: $gray3
+  .navbar
+    .navbar-menu
+      .navbar-item
+        &:not(:last-child)
+          margin-right: 3rem
+
+  .copyright
+    color: $secondary
+    margin: 1.875rem 0 0
+    font-weight: 500
+    font-size: 1.125rem
 
 .call-to-action
   .button
     &:not(:last-of-type)
       margin-right: 1.875rem
 
+.input
+  padding: 1.2rem
+  padding: 1.5rem
+  font-size: 1.125rem
+  color: rgba(53, 56, 61, 0.54);
+  border-radius: 5px;
+  border: solid 1px #cac8cf;
+
+.checkbox
+    display: none
+    + label
+      position: relative
+      padding-left: 1.9rem
+      &:before,
+      &:after
+        transition: all 0.3s ease
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 1.5rem;
+        height: 1.4rem;	
+      &:before
+        content: " ";
+        border: 1px solid $secondary
+        border-radius: 20%;
+      &:hover
+        &:before 
+          border-color: $primary
+
+
+    &:checked
+      + label
+        &:before
+          background: $primary
+          border-color: $primary
+        &:after
+          content: "\2714";
+          color: #2c3e50;
+          font-size: 1.1rem
+          color: white
+          line-height: 1.3;
+          text-align: center;
+    
+
 #block-hello
+  // height: 100vh
+  // max-height: 100%
+  .row
   .title
     margin-top: 5.0rem
     font-family: "HelloStockholm-Alt"
@@ -163,5 +417,53 @@ b, strong
     background-size: cover
     background-position: right
 
+#block-about
+  .blockquote
+    margin-top: 3.5rem
 
+#block-sign_up
+  // background-image:  linear-gradient(to right, #efeef1, rgba(239, 238, 242, 0));
+  background-image: url(../img/sign_up-bg.png);
+  background-size: cover
+  background-position: center
+
+  .tabs
+    margin-bottom: 0
+  .box
+    .box-innear
+      padding-top: 2.5rem
+      text-align: center
+      color: $gray1
+      font-size: 1.5rem
+      font-weight: bold
+      line-height: 1.1
+      padding-bottom: 3.75rem
+      padding-right: 3.125rem
+      padding-left: 3.125rem
+      .button
+        margin-top: 2.5rem
+        height: 4.375rem
+        width: 100%
+
+  .tabs  
+    border-bottom: none
+    border-top: 1px solid $gray3
+    .tab
+      text-align: center
+      font-size: 1.125rem
+      color: $gray2
+      &.active
+        border-top: 5px solid $primary
+        padding-bottom: calc(2.1875rem - 10px)
+        border-bottom: none
+        color: $primary
+    
+              
+  .input
+    width: 100%
+    &:first-of-type
+      margin-top: 3.125rem
+    &:not(:last-of-type)
+      margin-bottom: 1.25rem
+              
 @import "media" // Always at the end

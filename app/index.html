@@ -26,7 +26,8 @@
 </head>
 <body>
 
-  <section class="section">
+  
+  <section id="block-hello">
     <div class="container is-full-hd">
       <div class="navbar">
         <div class="navbar-logo">
@@ -38,28 +39,156 @@
           <a href="#" class="navbar-item">About</a>
           <a href="#" class="navbar-item">Problems</a>
           <a href="#" class="navbar-item">solutions</a>
-          <a href="#" class="navbar-item">EN</a>
+          <div href="#" class="navbar-item has-dropdown">
+            EN
+          <ul class="dropdown">
+            <li>
+              <a href="/" class="navbar-item">IT</a>
+            </li>
+          </ul>
+          </div>
           <a href="#" class="button">sign up for free</a>
         </nav>
       </div>
     </div>
-  </section>
-  <section id="block-hello" class="section">
     <div class="container-fluid">
       <div class="row">
         <div class="content col-lg-8 screen-left">
           <div class="col-lg-6 offset-lg-6">
-          <h1 class="title">Digital</h1>
-          <h2 class="subtitle">platform <br/> for artists</h2>
-          <p class="caption">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-          <p class="call-to-action"><a class="button is-primary" href="#">learn more</a><a class="button" href="#">sign up for free</a>
-          </p>
+            <h1 class="title">Digital</h1>
+            <h2 class="subtitle">platform <br/> for artists</h2>
+            <p class="caption">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <p class="call-to-action"><a class="button is-primary" href="#">learn more</a><a class="button" href="#">sign up for free</a>
+            </p>
           </div>
         </div>
         <div class="col-lg-4 screen-right"></div>
       </div>
     </div>
   </section>
+
+  <section id="block-about" class="section">
+    <div class="container">
+      <h3 class="section-title">about</h3>
+      <div class="box">
+        <ul class="tabs">
+          <li class="tab active">IDEA</li>
+          <li class="tab">features</li>
+          <li class="tab">platform capabilities</li>
+          <li class="tab">pricing</li>
+        </ul>
+        <div class="box-innear">
+          <p> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.  </p>
+          <div class="blockquote">
+            <img class="author-image" src="img/john-ruskin.png" alt="John Ruskin">
+            <div class="content">
+              <p class="text">L'arte migliore è quella in cui la mano, la testa e il cuore di un uomo procedono in accordo.</p>
+              <p class="author">John Ruskin</p>
+            </div>
+            <img class="icon" src="img/quot.png" >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section is-gray has-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <img class="section-image" src="img/sad-guy.png" alt="Sad guy">
+        </div>
+        <div class="col-sm-5 offset-sm-1">
+          <p class="section-title">The problems faced by artists</p>
+          <ul class="list is-red">
+            <li class="list-item">Difficulties with promotion </li>
+            <li class="list-item">Сlose parents and friends do not understand, laugh, there is no support </li>
+            <li class="list-item">Financial difficulties </li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+<section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5">
+          <p class="section-title">guerbois solutions</p>
+          <ul class="list is-red">
+            <li class="list-item">There is no need to have a website</li>
+            <li class="list-item">Оpportunities for promotion</li>
+            <li class="list-item">Сhance to pay attention to yourself</li>
+          </ul>
+        </div>
+        <div class="col-sm-6 offset-sm-1">
+          <img class="section-image" src="img/solution.png" alt="Happy girls">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="block-sign_up" class="section has-padding">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-sm-6 offset-sm-3">
+          <div class="box">
+            <p class="box-title section-title">SIGN UP</p>
+            <ul class="tabs is-reverse is-center row no-gutters">
+              <li class="tab no-hover active col-6">step 1</li>
+              <li class="tab no-hover col-6">step 2</li>
+            </ul>
+            <div class="box-innear">
+              <p>Take advantage of the<br/>chance of development<br/> for a cup of coffee a week</p>
+              <input name="first_name" class="input" placeholder="First Name">
+              <input name="last_name" class="input" placeholder="Last Name">
+              <p class="caption">
+                <input id="id_privacy" type="checkbox" class="checkbox" value="privacy">
+                <label for="id_privacy" class="label">Accept our privacy policy and customer agreement</label>
+              </p>
+              <button class="button is-primary">NEXT STEP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="navbar">
+        <nav class="navbar-menu">
+          <a href="#" class="navbar-item">Home</a>
+          <a href="#" class="navbar-item">About</a>
+          <a href="#" class="navbar-item">Problems</a>
+          <a href="#" class="navbar-item">solutions</a>
+          <div href="#" class="navbar-item has-dropdown">
+            EN
+            <ul class="dropdown">
+              <li>
+                <a href="/" class="navbar-item">IT</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-item no-hover social">
+            <a class="social-item" href="#">
+              <img src="img/fb.png" alt="Facebook">
+            </a>
+            <a class="social-item" href="#">
+              <img src="img/inst.png" alt="Instagram">
+            </a>
+            <a class="social-item" href="#">
+              <img src="img/pint.png" alt="Pintrest">
+            </a>
+          </div>
+          <a href="#" class="button">sign up for free</a>
+        </nav>
+      </div>
+      <p class="copyright">© 2017 All rights reserved GUERBOIS S.R.L.S. Number REA RM - 1523320 VAT: 14468051009</p>
+    </div>
+  </footer>
 
 	<script src="js/scripts.min.js"></script>
 

@@ -1,5 +1,6 @@
 $(function() {
 
-	// Custom JS
-
+  $(".has-dropdown").click(function(){
+    $(this).toggleClass('is-active');
+  });
 });
