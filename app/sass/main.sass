@@ -34,6 +34,7 @@ body
 
   &.has-padding 
     padding: 9.375rem 0
+    margin-top: 0
 
   &.is-gray
     background: $gray3
@@ -69,8 +70,9 @@ body
       padding-bottom: calc(2.1875rem - 10px)
     &:hover
       &:not(.no-hover)
-      color: rgba(16, 66, 106, 0.8);
-      cursor: pointer
+        &:not(.active)
+          color: rgba(16, 66, 106, 0.8);
+          cursor: pointer
 
 .box
   box-shadow: 0 8px 10px -5px rgba(255, 90, 97, 0.2), 0 6px 30px 5px rgba(255, 90, 97, 0.12), 0 16px 24px 2px rgba(0, 0, 0, 0.14);
@@ -324,6 +326,7 @@ b, strong
 
 .call-to-action
   .button
+    margin-bottom: 1rem
     &:not(:last-of-type)
       margin-right: 1.875rem
 
@@ -406,12 +409,13 @@ b, strong
 
   .call-to-action
     margin-top: 10.25rem
-    margin-bottom: 8.4375rem
+    margin-bottom: 7.4375rem
 
   .screen-left
     background: url(../img/header-left-pc.png);
     background-size: cover
     background-position: left
+    z-index: 100
   .screen-right
     background: url(../img/header-right-pc.png);
     background-size: cover

@@ -35,10 +35,10 @@
 
         </div>
         <nav class="navbar-menu">
-          <a href="#" class="navbar-item">Home</a>
-          <a href="#" class="navbar-item">About</a>
-          <a href="#" class="navbar-item">Problems</a>
-          <a href="#" class="navbar-item">solutions</a>
+          <a href="#block-hello" data-target="block-hello" class="navbar-item scrollTo">Home</a>
+          <a href="#block-about" data-target="block-about"  class="navbar-item scrollTo">About</a>
+          <a href="#block-problems" data-target="block-problems" class="navbar-item scrollTo">Problems</a>
+          <a href="#block-solution" data-target="block-solution" class="navbar-item scrollTo">solutions</a>
           <div href="#" class="navbar-item has-dropdown">
             EN
           <ul class="dropdown">
@@ -47,37 +47,37 @@
             </li>
           </ul>
           </div>
-          <a href="#" class="button">sign up for free</a>
+          <a href="#block-sign_up" data-target="block-sign_up" class="button scrollTo">sign up for free</a>
         </nav>
       </div>
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="content col-lg-8 screen-left">
-          <div class="col-lg-6 offset-lg-6">
+        <div class="content col-md-8 screen-left">
+          <div class="col-sm-6 offset-sm-6 col-12" >
             <h1 class="title">Digital</h1>
             <h2 class="subtitle">platform <br/> for artists</h2>
             <p class="caption">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <p class="call-to-action"><a class="button is-primary" href="#">learn more</a><a class="button" href="#">sign up for free</a>
+            <p class="call-to-action"><a class="button scrollTo is-primary" href="#block-about" data-target="block-about">learn more</a><a class="button scrollTo" href="#block-sign_up" data-target="block-sign_up" >sign up for free</a>
             </p>
           </div>
         </div>
-        <div class="col-lg-4 screen-right"></div>
+        <div class="col-md-4 screen-right"></div>
       </div>
     </div>
   </section>
 
-  <section id="block-about" class="section">
+  <section id="block-about" class="section has-padding">
     <div class="container">
       <h3 class="section-title">about</h3>
       <div class="box">
         <ul class="tabs">
-          <li class="tab active">IDEA</li>
-          <li class="tab">features</li>
-          <li class="tab">platform capabilities</li>
-          <li class="tab">pricing</li>
+          <li data-target="box-idea" class="tab active">IDEA</li>
+          <li data-target="box-features" class="tab">features</li>
+          <li data-target="box-platform" class="tab">platform capabilities</li>
+          <li data-target="box-pricing" class="tab">pricing</li>
         </ul>
-        <div class="box-innear">
+        <div class="box-innear box-idea">
           <p> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.  </p>
           <div class="blockquote">
             <img class="author-image" src="img/john-ruskin.png" alt="John Ruskin">
@@ -88,17 +88,32 @@
             <img class="icon" src="img/quot.png" >
           </div>
         </div>
+        <div class="box-innear box-features">
+          <h3>Box features</h3>
+          <p> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.  </p>
+          
+        </div>
+        <div class="box-innear box-platform">
+          <h3>Box platform</h3>
+          <p> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+        </div>
+
+        <div class="box-innear box-pricing">
+          <h3>Box pricing</h3>
+          <p> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.  </p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="section is-gray has-padding">
+  <section id="block-problems" class="section is-gray has-padding">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-6 section-image-wrap">
           <img class="section-image" src="img/sad-guy.png" alt="Sad guy">
         </div>
-        <div class="col-sm-5 offset-sm-1">
+        <div class="col-md-5 offset-md-1">
           <p class="section-title">The problems faced by artists</p>
           <ul class="list is-red">
             <li class="list-item">Difficulties with promotion </li>
@@ -111,10 +126,10 @@
     </div>
   </section>
 
-<section class="section">
+<section id="block-solution" class="section has-padding">
     <div class="container">
       <div class="row">
-        <div class="col-sm-5">
+        <div class="col-md-5">
           <p class="section-title">guerbois solutions</p>
           <ul class="list is-red">
             <li class="list-item">There is no need to have a website</li>
@@ -122,7 +137,7 @@
             <li class="list-item">Сhance to pay attention to yourself</li>
           </ul>
         </div>
-        <div class="col-sm-6 offset-sm-1">
+        <div class="col-md-6 section-image-wrap offset-md-1">
           <img class="section-image" src="img/solution.png" alt="Happy girls">
         </div>
       </div>
@@ -137,17 +152,24 @@
             <p class="box-title section-title">SIGN UP</p>
             <ul class="tabs is-reverse is-center row no-gutters">
               <li class="tab no-hover active col-6">step 1</li>
-              <li class="tab no-hover col-6">step 2</li>
+              <li class="tab no-hover js-tab-step-2 col-6">step 2</li>
             </ul>
-            <div class="box-innear">
+            <div class="box-innear box-step-1">
               <p>Take advantage of the<br/>chance of development<br/> for a cup of coffee a week</p>
               <input name="first_name" class="input" placeholder="First Name">
               <input name="last_name" class="input" placeholder="Last Name">
               <p class="caption">
-                <input id="id_privacy" type="checkbox" class="checkbox" value="privacy">
-                <label for="id_privacy" class="label">Accept our privacy policy and customer agreement</label>
+              <input id="id_privacy" type="checkbox" class="checkbox" value="privacy">
+              <label for="id_privacy" class="label">Accept our privacy policy and customer agreement</label>
               </p>
-              <button class="button is-primary">NEXT STEP</button>
+              <button data-target="box-step-2"class="button is-primary js-next">NEXT STEP</button>
+            </div>
+            <div class="box-innear box-step-2">
+              <input name="email" type="email" class="input" placeholder="Email">
+              <input name="password" class="input" placeholder="Password">
+              <input name="password_confrim" class="input" placeholder="Confrim password">
+              
+              <button class="button is-primary js-sign-up">SIGN UP FREE</button>
             </div>
           </div>
         </div>
@@ -160,10 +182,10 @@
     <div class="container">
       <div class="navbar">
         <nav class="navbar-menu">
-          <a href="#" class="navbar-item">Home</a>
-          <a href="#" class="navbar-item">About</a>
-          <a href="#" class="navbar-item">Problems</a>
-          <a href="#" class="navbar-item">solutions</a>
+          <a href="#block-hello" data-target="block-hello" class="navbar-item scrollTo">Home</a>
+          <a href="#block-about" data-target="block-about"  class="navbar-item scrollTo">About</a>
+          <a href="#block-problems" data-target="block-problems" class="navbar-item scrollTo">Problems</a>
+          <a href="#block-solution" data-target="block-solution" class="navbar-item scrollTo">solutions</a>
           <div href="#" class="navbar-item has-dropdown">
             EN
             <ul class="dropdown">
@@ -183,7 +205,7 @@
               <img src="img/pint.png" alt="Pintrest">
             </a>
           </div>
-          <a href="#" class="button">sign up for free</a>
+          <a href="#block-sign_up" data-target="block-sign_up" class="button scrollTo">sign up for free</a>
         </nav>
       </div>
       <p class="copyright">© 2017 All rights reserved GUERBOIS S.R.L.S. Number REA RM - 1523320 VAT: 14468051009</p>
