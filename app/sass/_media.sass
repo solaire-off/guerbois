@@ -40,7 +40,7 @@
 
 // ≥992px
 +media-breakpoint-down(md)
-  #block-hello
+  .header
     .navbar .navbar-menu .navbar-item:not(:last-child)
       margin-right: 3.5rem
 
@@ -52,16 +52,78 @@
     margin-bottom: 2.5rem
     order: -1
 
-  
-
   #block-problems,
   #block-solution
     padding-top: 0 
     padding-bottom: 3.9375rem
-  #block-hello
+  .header
     .navbar
       .navbar-menu
         display: none
+      .navbar-hamburger
+        width: 2.775rem
+        margin-top: 0.5rem
+        margin-right: 1rem
+        height: auto
+        background: url(../img/hamb.png)
+        background-size: contain
+        background-repeat: no-repeat
+        &:hover
+          cursor: pointer
+        &.is-active
+          background: url(../img/close.png)
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 2rem;
+          ~ .navbar-menu
+            display: block;
+            position: absolute;
+            top: 4.3rem;
+            z-index: 120;
+            background: white;
+            width: 100%;
+            left: 0;
+            display: flex
+            flex-direction: column
+            padding-bottom: 1rem
+            padding-top: 1rem
+            height: calc(100vh - 4.3rem)
+            .button
+              position: absolute
+              bottom: 2rem
+              width: 21.625rem;
+              height: 4.375rem;
+              left: 2.5rem
+            &::before
+              position: absolute
+              width: 100%
+              height: 2px
+              content: " "
+              background: $secondary
+              top: 0.5rem
+            .navbar-item
+              border-bottom: 2px solid $gray2
+              padding: 1rem
+              width: 100%
+              &.has-dropdown
+                &.is-active
+                  background: $gray3
+                .dropdown
+                  border-radius: 0
+                  left: 0
+                  top: 4rem
+                  padding: 0
+                  width: 100%
+                  margin-top: -0.1rem
+                  padding-top: 0 
+                  margin-left: 0
+                  box-shadow: none
+                  background: $gray3
+                  li
+                    padding: 0
+                    margin-left: 0
+                    margin-bottom: 0
+  #block-hello      
     .screen-right
       display: none
 
@@ -109,6 +171,13 @@
         flex-direction: column
         .navbar-item
           margin-bottom: 0.65rem
+          &.has-dropdown
+            z-index: 101
+            align-self: baseline
+          &.is-active
+            .dropdown
+            + .navbar-item
+               z-index: -1
         .button
           margin-top: 0.7rem
       
@@ -134,22 +203,23 @@
       font-size: 2.6rem
 
   #block-hello
-    .title
-      font-size: 9rem
-      margin-bottom: -2.5rem
-      position: relative
-      left: -3.2rem
-      z-index: -1
-      margin-top: 1rem
+    #slide_1
+      .title
+        font-size: 9rem
+        margin-bottom: -2.5rem
+        position: relative
+        left: -3.2rem
+        z-index: -1
+        margin-top: 1rem
 
-    .subtitle
-      font-size: 1.35rem
+      .subtitle
+        font-size: 1.35rem
 
-    .caption
-      display: none
+      .caption
+        display: none
 
-    .content
-      text-align: right
+      .content
+        text-align: right
 
     .call-to-action
       flex-direction: column
@@ -165,8 +235,25 @@
           background: transparent
           color: white
           order: -1
+          &:hover
+            color: rgba(white,0.7)
 
 
+    #slide_2
+      .title
+        margin-top: 15.26rem
+        font-size: 7.6rem
+        margin-bottom: -2.5rem
+        margin-left:  0
+      .subtitle
+        top: 0
+        font-size: 1.35rem
+      .caption
+        display: none
+      .content
+      
+      .call-to-action
+        margin-top: 2rem
 
 /*==========  Mobile First  ==========*/
 

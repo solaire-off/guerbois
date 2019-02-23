@@ -1,6 +1,7 @@
 @import "vars"
 @import "fonts"
 @import "libs"
+@import "../libs/slider/dist/stylesheets/superslides.css"
 
 ::placeholder
 	color: #666
@@ -21,12 +22,16 @@ body
 	overflow-x: hidden
 	color: $text
 	input, textarea
-		border: #666 1px solid
-		outline: none
-		&:focus:required:invalid
-			border-color: red
-		&:required:valid
-			border-color: green
+    box-shadow: none !important
+    border: #666 1px solid
+    outline: none !important
+    transition: all 0.2s
+    color: $secondary !important
+    &:hover,
+    &:focus,
+    .has-error
+      border-color: $primary
+
 
 
 .section
@@ -139,6 +144,37 @@ body
         border-radius: 50%
         background-image: radial-gradient(circle at 37% 38%, $primary, $burgundy);
         box-shadow: 0 10px 10px 0 rgba(255, 90, 97, 0.7), -1px 2px 5px 0 $secondary;
+  &.is-blue
+    list-style-type: none
+    .list-item
+      &::before
+        content: " "
+        display: inline-block;
+        position: absolute;
+        left: 1.0rem;
+        margin-top: 0.5rem;
+
+        width: 0.875rem
+        height: 0.875rem
+        border-radius: 50%
+        background-image: radial-gradient(circle at 37% 38%, $secondary, $secondary);
+        box-shadow: 0 10px 10px 0 $secondary, -1px 2px 5px 0 $secondary;
+
+  &.is-green
+    list-style-type: none
+    .list-item
+      &::before
+        content: " "
+        display: inline-block;
+        position: absolute;
+        left: 1.0rem;
+        margin-top: 0.5rem;
+
+        width: 0.875rem
+        height: 0.875rem
+        border-radius: 50%
+        background-image: radial-gradient(circle at 37% 38%, green, green);
+        box-shadow: 0 10px 10px 0 green, -1px 2px 5px 0 green;
 
   .list-item
     &:not(:last-child)
@@ -170,7 +206,7 @@ b, strong
     color: $secondary
     font-weight: 800
     text-transform: uppercase
-    border: 1px solid $primary;
+    border: 2px solid $primary;
     background-color: white
     border-radius: 2.1875rem
     line-height: 1
@@ -329,6 +365,19 @@ b, strong
     margin-bottom: 1rem
     &:not(:last-of-type)
       margin-right: 1.875rem
+    &:last-of-type
+      background: transparent
+      color: white
+      &:hover
+        color: rgba(white,0.7)
+
+.error
+    color: $primary
+    font-weight: 300;
+    margin: 0;
+    font-size: .85rem;
+    position: relative;
+    text-align: left;
 
 .input
   padding: 1.2rem
@@ -337,6 +386,16 @@ b, strong
   color: rgba(53, 56, 61, 0.54);
   border-radius: 5px;
   border: solid 1px #cac8cf;
+  position: relative
+  + .error
+    display: none
+    line-height: 0
+    left: 1.65rem;
+    top: -1.9rem
+  &.has-error
+    border-color: $primary
+    + .error
+      display: block
 
 .checkbox
     display: none
@@ -408,16 +467,29 @@ b, strong
     max-width: 30rem
 
   .call-to-action
-    margin-top: 10.25rem
+    // margin-top: 10.25rem
+    margin-top: 4.1875rem
     margin-bottom: 7.4375rem
 
-  .screen-left
+  .screen-left-woman
     background: url(../img/header-left-pc.png);
     background-size: cover
     background-position: left
     z-index: 100
-  .screen-right
+  .screen-right-woman
     background: url(../img/header-right-pc.png);
+    background-size: cover
+    background-position: right
+
+  .screen-left-man
+    background: url(../img/header-man-left-pc.png);
+    background-size: cover
+    background-position: left
+    z-index: 100
+    cursor: pointer
+
+  .screen-right-man
+    background: url(../img/header-man-right-pc.png);
     background-size: cover
     background-position: right
 
@@ -461,6 +533,8 @@ b, strong
         padding-bottom: calc(2.1875rem - 10px)
         border-bottom: none
         color: $primary
+        &.success
+          color: $secondary
     
               
   .input
@@ -469,5 +543,17 @@ b, strong
       margin-top: 3.125rem
     &:not(:last-of-type)
       margin-bottom: 1.25rem
-              
+    &:last-of-type
+      + .error
+        top: -0.8rem
+
+.overflow-hidden
+  overflow: hidden
+
+.arrow-right
+  cursor: pointer
+
+.slides-pagination
+  display: none
+
 @import "media" // Always at the end
